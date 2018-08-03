@@ -80,6 +80,9 @@ For the test data I used the nltk.util ngrams method and tested if it is compati
 *Email: svilen.ks@gmail.com* <br />
 *National University of Singapore*
 
+## References
+https://www.comp.nus.edu.sg/~zhaojin/cs3245_2018/hw1-lang.html - definition of the assignment 
+
 
 
 

@@ -74,11 +74,11 @@ Unit tests created to test our code extensively.
 * dictionary_with_numbers.txt <br />
 * dictionary_without_numbers.txt <br />
 * postings_with_numbers.txt <br />
-* postings_without_numbers.txt <br />
+* postings_without_numbers.txt
 
 Files created to answer the essay quesitons. <br />
 
-* essay.txt <br />
+* essay.txt
 
 Answers to the essay questions.
 
