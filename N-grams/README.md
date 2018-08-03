@@ -25,7 +25,8 @@ end tokens (padding). The method also calls increment_dict_values multiple times
 It increments the number of occurrences for a 4-gram and insert/update it in the corresponding dictionary. 
 For example if there is the tuple ('a', 'b', 'c', 'd'), which occures for the first time now as part of a 
 sentence labeled as indonesian, it will be inserted in the indonesian dictionary with a value of 2 
-(1+1, because of the add 1 smoothing) and it will be inserted in the malaysian and tamil languages with a value of 1, because of the 1 smoothing.
+(1+1, because of the add 1 smoothing) and it will be inserted in the malaysian and tamil languages with a value of 1, 
+because of the 1 smoothing.
 All 3 dictionaries contain all existing 4-grams in the training data. 
 If the above mentioned tuple was to be found with a value of 4 in the indonesian dictionary, 
 it  will be updated to 5, because it's a new occurence. If the 4-gram is to be found in the other 2 dictionaries, they are not updated, 
@@ -54,11 +55,14 @@ because it was often the case that they were more English words in a Malaysian s
 
 Evaluation of test data:
 When computing the similarity of a sentence, part of the test data, I also use the same techniques as above 
-in order to be consistent and be able to evaluate them correctly (lowercase, remove special characters, but not removing any words considered as bad not to corrupt the training data). 
+in order to be consistent and be able to evaluate them correctly (lowercase, remove special characters, 
+but not removing any words considered as bad not to corrupt the training data). 
 The formula I used initially for the computation was:
 probabilty = probability_of_gram1 * probability_of_gram2 * ... * probability_of_gramN
-If there is a 4-gram that doesn't exist in the model, I skip it, but keep track of the number of such not familiar 4-grams to my model.
-Due to the small probabilities of most 4-grams and their multiplication, I used the sum of the logarithm of each 4-gram to cope with underflows.
+If there is a 4-gram that doesn't exist in the model, I skip it, but keep track of the number of such not familiar 
+4-grams to my model.
+Due to the small probabilities of most 4-grams and their multiplication, I used the sum of the logarithm 
+of each 4-gram to cope with underflows.
 
 I also set the following restraint for not familiar 4-grams: 
 if 50% of the 4-grams or more in a new sentence are not to be found in the language model, 
