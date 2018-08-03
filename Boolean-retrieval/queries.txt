@@ -1,0 +1,14 @@
+american AND NOT american
+American
+american AND analYst
+american AND asseSs
+american AND NOT assess
+american OR anAlyst
+american OR NOT analyst
+american AND analyst AND assess
+(american OR analyst) AND NOT assess
+(american AND NOT assess) OR analyst
+american AND NOT (assess OR analyst)
+(american AND analyst) OR (american AND assess)
+
+dasda

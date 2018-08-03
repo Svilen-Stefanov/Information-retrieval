@@ -1,0 +1,23 @@
+1. You will observe that a large portion of the terms in the dictionary are numbers. However, we normally do not use numbers as query terms to search. Do you think it is a good idea to remove these number entries from the dictionary and the postings lists? Can you propose methods to normalize these numbers? How many percentage of reduction in disk storage do you observe after removing/normalizing these numbers?
+
+I think the choice of removing number entries or not depends on the frequency of user searching for numbers. If the frequency is high (for instance users are numerical analysts) then we should keep the number entries. Or else we can remove them if they take up too much space in our files.
+
+I do not think there is a good way of normalizing numbers except converting from scientific notation to standard form. A naive normalization such as storing 31.41 as 3141 will cause 3.141 and 314.1 to treated as the same, although they have different meanings.
+
+After removing the numbers, the dictionary.txt shrank significantly from 1.6MB to 1MB, which is 62.5% of the original size, while the postings.txt shrank from 4MB to 3.7MB.
+
+
+2. What do you think will happen if we remove stop words from the dictionary and postings file? How does it affect the searching phase?
+
+For one-word queries, the user won’t be able to search for stop words since it doesn’t exist in the dictionary. For longer queries it depends on the boolean expression. “A OR ‘stop_word’” returns the posting of A, while “A AND ‘stop_word’” returns zero result. “NOT ‘stop_word’” might return the all document IDs depending on the implementation.
+
+
+3. The NLTK tokenizer may not correctly tokenize all terms. What do you observe from the resulting terms produced by sent_tokenize() and word_tokenize()? Can you propose rules to further refine these results?
+
+From the observation, sent_tokenize() does a good job at tokenizing with sentences with punctuations at the end. However, for text without punctuations such as “Shr 45 cts vs 58 cts      Net 1.1 mln vs 829,000”, it treats everything as a whole and doesn’t tokenize the individual statements.
+One way of refining the result is to tokenize it by \n, \t and multiple \s (the next line, tab character, and multiple spaces). This is because a normal sentence should not contain these characters.
+
+word_tokenize() tokenizes the terms with spaces with some exceptions when it encounters punctuations. For instance, it’s becomes [it’, s], aren’t becomes [are, n’t], and Bob’s becomes [Bob’, s].
+The first two examples are reasonable because it’s is the abbreviation of it is, and aren’t is the abbreviation of are not. We can refine the results by replacing “it’” with “it”, “s” with “is”, and “n’t” with “not” before storing them as terms. The last example is more tricky, since Bob’s can refer to Bob is or Bob owns something, e.g. Bob’s pen. We will need to check the surrounding context before deciding if we want to store it as “Bob” “is”.
+
+

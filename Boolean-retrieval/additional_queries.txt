@@ -1,0 +1,48 @@
+
+somerandomnonexistingword
+a
+the AND a
+tHe AND A
+(the) AND (a)
+a or b
+NOT a
+
+a AND b AND c
+(a AND b) AND c
+a AND (b AND c)
+a AND NOT b
+a AND NOT NOT b
+a AND NOT NOT NOT b
+
+NOT a AND b
+a OR b OR c
+a AND b OR c
+NOT a OR b
+b OR NOT a
+
+a AND NOT b AND c
+a AND c AND NOT b
+NOT b AND a AND c
+NOT a AND NOT b
+a AND b OR c AND d
+a OR b OR c AND d
+a OR c AND d OR b
+
+NOT a OR b AND c
+b AND c OR NOT a
+NOT (a OR b) AND c
+NOT (A OR b AND c)
+
+
+NOT a AND NOT b AND NOT c
+NOT a AND NOT (b AND NOT c)
+NOT a AND (b AND NOT c)
+NOT a AND (b AND NOT c) OR d
+NOT a AND (b AND NOT c) AND d
+
+NOT (a OR b AND c AND NOT d) AND NOT d AND (a OR b AND c) OR nonexistingword AND NOT (a AND NOT b AND NOT c OR d OR c)
+  
+
+
+
+

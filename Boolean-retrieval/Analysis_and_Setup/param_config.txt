@@ -1,0 +1,6 @@
+Run index.py with the following parameters:
+-i /home/local_path_to_libs/nltk_data/corpora/reuters/training/ -d dictionary.txt -p postings.txt
+
+Run search.py with the following parameters:
+-d dictionary.txt -p postings.txt -q queries.txt -o output.txt
+
