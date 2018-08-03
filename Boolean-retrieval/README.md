@@ -63,10 +63,10 @@ Implement and evaluate the Shunting-yard algorithm and method for getting the po
 Incorporate all list operations for the operators AND, OR, NOT and AND NOT.
 
 ```
-test_list_operations.py <br />
-test_preprocess.py <br />
-test_reverse_polish_notation.py <br />
-test_search.py <br />
+test_list_operations.py 
+test_preprocess.py 
+test_reverse_polish_notation.py
+test_search.py
 ```
 Unit tests created to test our code extensively.
 
@@ -75,8 +75,11 @@ Unit tests created to test our code extensively.
 * dictionary_without_numbers.txt <br />
 * postings_with_numbers.txt <br />
 * postings_without_numbers.txt <br />
+
 Files created to answer the essay quesitons. <br />
+
 * essay.txt <br />
+
 Answers to the essay questions.
 
 ## Authors
