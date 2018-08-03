@@ -1,5 +1,5 @@
 
-# Language Detection
+# Boolean retrieval
 
 The aim ot this project is to implement indexing and searching techniques for Boolean retrieval.
 
@@ -47,36 +47,34 @@ After the answers to all queries are computed, they are written to the output fi
 
 ### Description of the files
 
-index.py
+**index.py** <br />
 Generate the dictionary and the postings files from the Reuters training data set.
 
-search.py
+**search.py** <br />
 Load the dictionary, read and evaluate all queries and write their results to the output file.
 
-preprocess.py
+**preprocess.py** <br />
 Change the order of the query elements so that the query can be processed optimally.
 
-reverse_polish_notation.py
+**reverse_polish_notation.py** <br />
 Implement and evaluate the Shunting-yard algorithm and method for getting the postings for a specific term.
 
-list_operations.py
+**list_operations.py** <br />
 Incorporate all list operations for the operators AND, OR, NOT and AND NOT.
 
-test_list_operations.py
-test_preprocess.py
-test_reverse_polish_notation.py
-test_search.py
+test_list_operations.py <br />
+test_preprocess.py <br />
+test_reverse_polish_notation.py <br />
+test_search.py <br />
 Unit tests created to test our code extensively.
 
-Essay_Questions/
-    dictionary_with_numbers.txt
-    dictionary_without_numbers.txt
-    postings_with_numbers.txt
-    postings_without_numbers.txt
+**Essay_Questions/**
+    * dictionary_with_numbers.txt <br />
+    * dictionary_without_numbers.txt <br />
+    * postings_with_numbers.txt <br />
+    * postings_without_numbers.txt <br />
     Files created to answer the essay quesitons.
-
-Essay_Questions/
-    essay.txt
+    * essay.txt <br />
     Answers to the essay questions.
 
 ## Authors
