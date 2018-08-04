@@ -1,0 +1,15 @@
+1. In this assignment, we didn't ask you to support phrasal queries, which is a feature that is typically supported in web search engines. Describe how you would support phrasal search in conjunction with the VSM model. A sketch of the algorithm is sufficient.
+
+Since a phrasal search will be quite slow with the regular indexing, I would first introduce a second dictionary and postings for it that will contain all bigrams in a document and the documents they are part of. For the exact integration of it, I would follow the proposed approach in "Triple Indexing: An Efficient Technique for Fast Phrase Query Evaluation" by Shashank Gugnani and Rajendra Kumar Roul.
+
+2. Describe how your search engine reacts to long documents and long queries as compared to short documents and queries. Is the normalization you use sufficient to address the problems? In your judgement, is the ltc.lnc scheme (n.b., not the ranking scheme you were asked to implement) sufficient for retrieving documents from the Reuters-21578 collection?
+
+In general, long documents and queries are slower and not that accurate than short ones.
+The worse precision for long documents and queries is due to the fact that I do not support
+phrasal queries. Normalization will not be able to recognise the difference between queries like "cats are sweeter than dogs" and "dogs are sweeter than cats", so no, it won't necessarily be sufficient. It depends on what the search engine is needed for and what kind of queries it needs to support.
+
+
+3. Do you think zone or field parametric indices would be useful for practical search in the Reuters collection? Note: the Reuters collection does have metadata for each article but the quality of the metadata is not uniform, nor are the metadata classifications uniformly applied (some documents have it, some don't).
+
+It might be useful, yes. There are a lot of short documents (for example containing only dates) that could be easily filtered using metadata. 
+On the other hand, it depends on the user needs and how the search engine would be used. It might be sufficient to only use ltc.lnc or lnc.ltc, or incorporate phrasal search as well because the collection is not too big.
