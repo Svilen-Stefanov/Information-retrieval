@@ -10,7 +10,7 @@ The python version used for the project is 2.7.12.
 
 ## Solution and results
 
-### Index phase:
+### Index phase
 
 -> We build a positional dictionary and its postings.<br />
 -> In addition, we also create a metadata dictionary and a thesaurus, which are both used in the search phase.<br />
@@ -19,7 +19,7 @@ The python version used for the project is 2.7.12.
 -> In the postings list, for each term we store it’s postings list in the form for example “docId1-pos11-pos12 docId2-pos21-pos22-pos23 docId3-pos31-pos32”. <br />
 -> The metadata dictionary stores the title of case, name of court and date posted for each document.
 
-### Search phase:
+### Search phase
 
 A) Boolean retrieval:<br />
 -> For phrases, we use positional dictionary to retrieve only documents that contain the exact phrase. This is done by intersecting the positions of each term in the phrase and taking into account the relative adjacent positions in the documents.<br />
@@ -57,11 +57,11 @@ alpha = 1<br />
 beta = 0.75<br />
 gamma = 0.15<br />
 
-### Optimizations:
+### Optimizations
 -> Stemming optimization<br />
 We observed that indexing was taking too long (about 1 hour or so). We discovered that stemming was the bottleneck for slowing down the indexing phase. Because we don’t have control over the library operations for stemming, we decided to do local caching of stem words for speed up. For each new word that we get, we store the original word as key and its stemmed value as value in a locally cached dictionary. So next time, before we attempt to stem a word, we first check if the word already has its stem present in the cache before calling the library stem function. This halved the indexing time for us, and we were able to index in about 25~28 minutes now.
  
-### Other experiments:
+### Other experiments
 
 -> We tried to create a bigram and trigram dictionary that turned out to be too large and went beyond 4GB of memory, which is the reason we are currently using positional indexing.
 
