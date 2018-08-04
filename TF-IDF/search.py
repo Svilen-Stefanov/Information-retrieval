@@ -11,7 +11,7 @@ from nltk.stem.porter import PorterStemmer
 
 """
     File name: search.py
-    Authors: Svilen Stefanov
+    Author: Svilen Stefanov
     Date created: 12/03/2018
     Date last modified: 24/03/2018
     Python Version: 2.7

@@ -75,9 +75,6 @@ The dictionary with terms and their head, tail and document frequency.
 **postings.txt**<br />
 The postings for all terms in the dictionary and their term frequency in the respective document.
 
-**README.txt**<br />
-The description of our approach and other important notes.
-
 **Questions/**<br />
 * answers.txt <br />
 
